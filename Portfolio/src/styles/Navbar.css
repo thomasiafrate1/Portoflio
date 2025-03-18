@@ -1,0 +1,22 @@
+nav{
+    align-items: center;
+    padding: 1rem 1rem;
+    background-color: #282c34;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 1px solid #d1d1d1;
+    border-top: 1px solid #282c34;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+}
+
+nav ul li{
+    padding: 0px 1rem;
+}
