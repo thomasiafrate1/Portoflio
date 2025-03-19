@@ -6,13 +6,6 @@
     margin-bottom: 20px;
 }
 
-/* .sectionProfil{
-    background-color: #0D1117;
-    z-index: 100;
-    height: 100vh;
-} */
-
-/* Conteneur principal */
 .profile-container {
     display: flex;
     justify-content: center;
@@ -22,7 +15,6 @@
     color: white;
   }
   
-  /* Contenu principal */
   .profile-content {
     display: flex;
     align-items: center;
@@ -31,14 +23,49 @@
     gap: 10vw;
   }
   
-  /* Image de profil */
   .profile-image img {
     width: 500px;
     height: 500px;
     object-fit: cover;
   }
-  
-  /* Infos profil */
+
+  .profile-projects-years{
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+  .profile-projects-years h1 {
+    margin-left: 5%;
+    color: white;
+  }
+
+  .profile-projects-years span {
+    color: red;
+  }
+
+  .profile-projects-years p{
+    color: white;
+    font-size: larger;
+    margin-left: 5%;
+  }
+
+  .container-projects-years{
+    border: 1px solid #B22222;
+    width: 47%;
+    height: 100px;
+    background-color: #300606 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .container-projects-years:hover{
+    background-color: #B22222;
+    transition: 0.5s;
+  }
+
   .profile-info {
     flex: 1;
   }
@@ -47,15 +74,18 @@
     font-size: 2rem;
     font-weight: bold;
   }
+
+  .profile-title span{
+    color: red;
+  }
   
   .profile-description {
     font-size: 1rem;
     margin-top: 10px;
   }
   
-  /* Liens réseaux sociaux */
   .profile-links {
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
     gap: 15px;
   }

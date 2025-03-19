@@ -1,23 +1,26 @@
-import { FaGoogleWallet } from "react-icons/fa6";
 import "../styles/Profil.css";
-import { FaLinkedin, FaGithub, FaMailBulk, FaMailchimp, FaGoogle } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Profile = () => {
   return (
-
-    
     <div className="profile-container">
       <div className="profile-content">
         <div className="profile-image">
           <img src="/profilicon2.png" alt="Your Name" />
-          <div>
-            <h1 className="profile-name">Thomas Iafrate</h1>
-            <p className="profile-job">Etudiant en Développement Web</p>
+          <div className="profile-projects-years">
+            <div className="container-projects-years">
+              <h1 className="profile-name">25<span>+</span></h1>
+              <p className="profile-job">Projets Effectués</p>
+            </div>
+            <div className="container-projects-years">
+              <h1 className="projects-years">3<span>+</span></h1>
+              <p className="desc-projects-years">Ans de développement</p>
+            </div>
           </div>
         </div>
 
         <div className="profile-info">
-          <h1 className="profile-title">Un peu de mon histoire</h1>
+          <h1 className="profile-title">Un peu de mon <span>histoire</span></h1>
           <p className="profile-description">
             Bonjour, je m'appelle Thomas Iafrate, j'ai 20 ans et je suis étudiant en
             développement web. <br /> 
@@ -36,15 +39,11 @@ const Profile = () => {
             Vous pouvez me contacter via les liens ci-dessous.
           </p>
           <div className="profile-links">
-            <a href="https://www.linkedin.com/in/votreprofil" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/thomas-iafrate-21a35824b" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="profile-icon" />
             </a>
             <a href="https://github.com/thomasiafrate1" target="_blank" rel="noopener noreferrer">
               <FaGithub className="profile-icon" />
-            </a>
-            {/* ACHANGER LES LIENS */}
-            <a href="https://github.com/thomasiafrate1" target="_blank" rel="noopener noreferrer">
-              <FaGoogle className="profile-icon" />
             </a>
           </div>
         </div>
