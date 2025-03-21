@@ -5,9 +5,9 @@ import { IoLogoJavascript } from "react-icons/io";
 
 const Experience = () => {
   return (
-    <div className="container-experience-container">
+    <div id="experiences" className="container-experience-container">
         <div className="experience-container">
-            <h2 className="experience-title">Experience</h2>
+            <h2 className="experience-title">EXPERIENCE</h2>
                 <div className="experience-timeline">
                     <div className="experience-item">
                     <div className="experience-year">Août 2024 - Novembre 2024</div>

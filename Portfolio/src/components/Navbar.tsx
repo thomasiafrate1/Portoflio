@@ -3,7 +3,7 @@ import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -17,14 +17,22 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className={scrolled ? "navbar scrolled" : "navbar"}>
-      <div className="navbar-brand">Thomas Iafrate</div>
+      <div  onClick={() => scrollToSection("hero")} className="navbar-brand">Thomas Iafrate</div>
       <ul className="navbar-links">
-        <li><a href="#home">Profil</a></li>
-        <li><a href="#about">Projets</a></li>
-        <li><a href="#services">Compétences</a></li>
-        <li><a href="#portfolio">Me contacter</a></li>
+        <li><a onClick={() => scrollToSection("profil")}>Profil</a></li>
+        <li><a onClick={() => scrollToSection("experiences")}>Expérience</a></li>
+        <li><a onClick={() => scrollToSection("competences")}>Compétences</a></li>
+        <li><a onClick={() => scrollToSection("projets")}>Projets</a></li>
+        <li><a onClick={() => scrollToSection("contact")}>Me contacter</a></li>
       </ul>
     </nav>
   );

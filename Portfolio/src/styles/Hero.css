@@ -6,7 +6,7 @@
     background-color: #0D1117;
     color: white;
     width: 100vw;
-    z-index: -1;
+    z-index: 0;
     position: relative;
   }
   
@@ -79,6 +79,8 @@
     background-color: red;
     color: white;
   }
+
+  
   
   .hero-button.primary:hover {
     background-color: darkred;
@@ -138,3 +140,22 @@
     z-index: 2;
   }
   
+
+  /* Animation de fondu */
+.fade-text {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-text span{
+  color: red;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}

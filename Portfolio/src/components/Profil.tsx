@@ -3,13 +3,13 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Profile = () => {
   return (
-    <div className="profile-container">
+    <div id="profil" className="profile-container" >
       <div className="profile-content">
         <div className="profile-image">
           <img src="/profilicon2.png" alt="Your Name" />
           <div className="profile-projects-years">
             <div className="container-projects-years">
-              <h1 className="profile-name">25<span>+</span></h1>
+              <h1 className="profile-name" >25<span>+</span></h1>
               <p className="profile-job">Projets Effectués</p>
             </div>
             <div className="container-projects-years">
