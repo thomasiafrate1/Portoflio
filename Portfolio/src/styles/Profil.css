@@ -104,3 +104,60 @@
     background: #f56565;
   }
   
+  @media (max-width: 768px) {
+    .profile-container {
+      height: auto;
+      padding: 40px 0;
+    }
+  
+    .profile-content {
+      flex-direction: column;
+      gap: 40px;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .profile-image img {
+      width: 250px;
+      height: auto;
+    }
+  
+    .profile-projects-years {
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+      width: 100vw;
+    }
+  
+    .container-projects-years {
+      width: 30%;
+      height: 170px;
+      padding: 15px;
+      flex-direction: column;
+      display: flex;
+    }
+
+    .profile-projects-years p{
+      margin-left: 0;
+    }
+  
+    .profile-info {
+      padding: 0 10px;
+    }
+  
+    .profile-title {
+      font-size: 1.5rem;
+    }
+  
+    .profile-description {
+      font-size: 1rem;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  
+    .profile-links {
+      justify-content: center;
+    }
+  }
+  

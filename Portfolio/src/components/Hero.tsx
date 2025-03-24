@@ -4,6 +4,8 @@ import "../styles/Hero.css";
 const Hero = () => {
   const [isWebDev, setIsWebDev] = useState(true);
   const [showText, setShowText] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setShowText(false); 
@@ -12,9 +14,28 @@ const Hero = () => {
         setShowText(true); 
       }, 500); 
     }, 2500); 
-
     return () => clearInterval(interval);
   }, []);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div id="hero" className="hero-container">
@@ -37,8 +58,8 @@ const Hero = () => {
             </span>
           </h1>
           <div className="hero-buttons">
-            <button className="hero-button primary">Me contacter ?</button>
-            <button className="hero-button secondary">Mon profil</button>
+            <button className="hero-button primary" onClick={() => scrollToSection("contact")}>Me contacter ?</button>
+            <button className="hero-button secondary" onClick={() => scrollToSection("profil")}>Mon profil</button>
           </div>
         </div>
 

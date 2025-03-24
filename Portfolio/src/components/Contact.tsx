@@ -24,10 +24,9 @@ const Contact = () => {
   return (
     <div id="contact" className="contact-container">
       <h2>CONTACTEZ-MOI</h2>
-      <p>N’hésitez pas à me contacter, je vous répondrai dans les plus brefs délais.</p>
+      <p>N'hésitez pas à me contacter, je vous répondrai dans les plus brefs délais.</p>
       
       <div className="contact-wrapper">
-        {/* FORMULAIRE */}
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-row">
             <input type="text" name="nom" placeholder="Nom *" required onChange={handleChange} />
@@ -39,13 +38,10 @@ const Contact = () => {
           </div>
           <input type="text" name="objet" placeholder="Objet *" required onChange={handleChange} />
           <textarea name="message" placeholder="Message *" required onChange={handleChange}></textarea>
-
           <div className="form-footer">
-
             <button type="submit" className="submit-btn">ENVOYER</button>
           </div>
         </form>
-
         <div className="contact-info">
           <p><FaEnvelope /> thomasiafrate04@gmail.com</p>
           <p><FaPhone /> 06 35 26 17 99</p>

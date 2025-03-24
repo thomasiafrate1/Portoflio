@@ -129,7 +129,21 @@
     border-radius: 50%;
     border: 50px solid red;
     z-index: 1;
-    box-shadow: 0 0 180px 50px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 160px 50px rgba(255, 0, 0, 0.5);
+    
+  }
+  
+
+  .hero-circle::after {
+    content: "";
+    border-top: 1px solid rgb(100, 98, 98);
+    position: absolute;
+    bottom: -291px;
+    left: -423px;
+    width: 1300px;
+    height: 240px; /* ajustable selon la hauteur à couper */
+    background: #0D1117;
+    z-index: 2;
   }
   
   .hero-image {
@@ -158,4 +172,77 @@
 
 .hidden {
   opacity: 0;
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 767px) {
+  .hero-container {
+    padding: 40px 20px;
+    height: auto;
+    margin-left: -20px;
+  }
+
+  .hero-image-container{
+    margin-top: 140px;
+  }
+  .fade-text{
+    margin-top: 35px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-hello {
+    font-size: 2rem;
+  }
+
+  .hero-name {
+    font-size: 2rem;
+    margin-top: -1rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+    width: 80vw;
+  }
+
+  .hero-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .hero-image-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-circle {
+    width: 300px;
+    height: 300px;
+    border-width: 30px;
+    box-shadow: 0 0 60px 20px rgba(255, 0, 0, 0.5);
+  }
+
+  .hero-circle::after {
+    display: none; /* Cache le masque sous l'image sur mobile */
+  }
+
+  .hero-image {
+    width: 90%;
+    height: auto;
+  }
 }

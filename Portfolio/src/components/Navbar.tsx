@@ -3,16 +3,12 @@ import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  
+  const [menuOpen, setMenuOpen] = useState(false); // 👈 pour ouvrir/fermer le menu
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -22,12 +18,22 @@ const Navbar = () => {
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
+    setMenuOpen(false); // 👈 referme le menu après clic
   };
 
   return (
-    <nav className={scrolled ? "navbar scrolled" : "navbar"}>
-      <div  onClick={() => scrollToSection("hero")} className="navbar-brand">Thomas Iafrate</div>
-      <ul className="navbar-links">
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <div onClick={() => scrollToSection("hero")} className="navbar-brand">Thomas Iafrate</div>
+
+      {/* Menu burger */}
+      <div className="burger" onClick={() => setMenuOpen(!menuOpen)}>
+        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
+        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
+        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
+      </div>
+
+      {/* Liens */}
+      <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
         <li><a onClick={() => scrollToSection("profil")}>Profil</a></li>
         <li><a onClick={() => scrollToSection("experiences")}>Expérience</a></li>
         <li><a onClick={() => scrollToSection("competences")}>Compétences</a></li>

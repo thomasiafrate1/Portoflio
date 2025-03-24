@@ -131,3 +131,55 @@
     background: #f4a261;
   }
   
+
+  @media (max-width: 768px) {
+    .experience-container {
+      padding: 30px 15px;
+    }
+  
+    .experience-title {
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  
+    .experience-item {
+      flex-direction: column;
+      margin-left: 0;
+    }
+  
+    .experience-year {
+      margin: 0 0 20px 0;
+      align-self: flex-start;
+      font-size: 0.95rem;
+    }
+  
+    .experience-content {
+      padding: 15px;
+      font-size: 0.95rem;
+      width: 93%;
+    }
+  
+    .experience-position {
+      font-size: 1.3rem;
+    }
+  
+    .experience-company {
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+  
+    .experience-techs {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  
+    /* Cache les éléments de la timeline */
+    .trait-timeline,
+    .trait-timeline2,
+    .point-timeline,
+    .point-timeline2 {
+      display: none;
+    }
+  }
+  
