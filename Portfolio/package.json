@@ -1,9 +1,10 @@
 {
+  "homepage": "https://thomasiafrate1.github.io/Portoflio",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/thomasiafrate1/Portoflio",
+  
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
