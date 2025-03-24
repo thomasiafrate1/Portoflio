@@ -1,30 +1,26 @@
 import "../styles/Footer.css";
 import {FaLinkedin, FaGithub } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Footer = () => {
 
-const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // juste :
+useEffect(() => {
+  const handleScroll = () => { /* ... */ };
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
-  const scrollToSection = (id) => {
+
+  const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
+  
 
   return (
     <footer className="footer">

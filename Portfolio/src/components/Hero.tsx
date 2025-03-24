@@ -4,7 +4,6 @@ import "../styles/Hero.css";
 const Hero = () => {
   const [isWebDev, setIsWebDev] = useState(true);
   const [showText, setShowText] = useState(true);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,24 +17,18 @@ const Hero = () => {
   }, []);
   
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
+    const handleScroll = () => { /* ... */ };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  
+  
+    const scrollToSection = (id: string) => {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    };
 
   return (
     <div id="hero" className="hero-container">

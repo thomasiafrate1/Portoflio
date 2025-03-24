@@ -11,16 +11,15 @@ const Contact = () => {
     objet: "",
     message: "",
   });
-
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  const handleSubmit = (e) => {
+  
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form Data Submitted:", formData);
   };
-
+  
   return (
     <div id="contact" className="contact-container">
       <h2>CONTACTEZ-MOI</h2>
