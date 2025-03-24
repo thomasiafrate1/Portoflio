@@ -53,8 +53,8 @@ const Skills = () => {
 
       {/* CV Section */}
       <div className="cv-section">
-      <iframe src="/CV.jpg" width="100%" height="600px" />
-        <a href="/CV.pdf" download className="cv-download">Télécharger CV</a>
+      <img src="https://thomasiafrate1.github.io/Portoflio/CV.jpg" className="cv-image" />
+        <a href="https://thomasiafrate1.github.io/Portoflio/CV.pdf" download className="cv-download">Télécharger CV</a>
       </div>
     </div>
   );
