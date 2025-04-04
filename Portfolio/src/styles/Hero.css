@@ -138,10 +138,10 @@
     content: "";
     border-top: 1px solid rgb(100, 98, 98);
     position: absolute;
-    bottom: -291px;
+    bottom: -200px;
     left: -423px;
     width: 1300px;
-    height: 240px; /* ajustable selon la hauteur à couper */
+    height: 150px; 
     background: #0D1117;
     z-index: 2;
   }
