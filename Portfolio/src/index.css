@@ -2,67 +2,135 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+* {
+  box-sizing: border-box;
 }
-a:hover {
-  color: #535bf2;
+
+html {
+  min-height: 100%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Fond global */
+#root {
+  position: relative;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.stars-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.app-content {
+  position: relative;
+  z-index: 1;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Étoiles */
+#stars,
+#stars2,
+#stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  box-shadow:
+    25px 120px #fff, 90px 340px #fff, 160px 80px #fff, 220px 500px #fff,
+    320px 140px #fff, 410px 700px #fff, 520px 250px #fff, 630px 900px #fff,
+    760px 120px #fff, 840px 420px #fff, 930px 680px #fff, 1040px 240px #fff,
+    1150px 840px #fff, 1260px 160px #fff, 1380px 540px #fff, 1490px 320px #fff,
+    1600px 760px #fff, 1720px 200px #fff, 1840px 600px #fff, 1950px 100px #fff,
+    60px 980px #fff, 180px 1180px #fff, 290px 1360px #fff, 380px 1540px #fff,
+    500px 1100px #fff, 610px 1280px #fff, 720px 1460px #fff, 860px 1700px #fff,
+    980px 1020px #fff, 1110px 1200px #fff, 1230px 1380px #fff, 1370px 1560px #fff,
+    1490px 1740px #fff, 1620px 1140px #fff, 1740px 1320px #fff, 1880px 1500px #fff;
+  animation: animStar 50s linear infinite;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: inherit;
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  box-shadow:
+    120px 220px #fff, 340px 460px #fff, 560px 160px #fff, 740px 620px #fff,
+    920px 300px #fff, 1120px 760px #fff, 1320px 440px #fff, 1540px 920px #fff,
+    1760px 240px #fff, 1900px 700px #fff, 210px 1240px #fff, 470px 1480px #fff,
+    790px 1680px #fff, 1080px 1180px #fff, 1360px 1400px #fff, 1680px 1600px #fff;
+  animation: animStar 100s linear infinite;
+}
+
+#stars2::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: inherit;
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  box-shadow:
+    260px 300px #fff, 620px 800px #fff, 980px 180px #fff, 1280px 640px #fff,
+    1620px 360px #fff, 1880px 960px #fff, 420px 1320px #fff, 860px 1720px #fff,
+    1460px 1220px #fff, 1760px 1520px #fff;
+  animation: animStar 150s linear infinite;
+}
+
+#stars3::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: inherit;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  to {
+    transform: translateY(-2000px);
   }
 }

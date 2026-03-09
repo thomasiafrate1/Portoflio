@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #0D1117;
+    background-color: transparent;
     color: white;
     width: 100vw;
   }
@@ -92,7 +92,7 @@
   }
   
   .profile-icon {
-    font-size: 1.8rem;
+    font-size: 3rem;
     color: white;
     background: #1f1f1f;
     padding: 10px;
@@ -101,7 +101,7 @@
   }
   
   .profile-icon:hover {
-    background: #f56565;
+    background: #ff2222;
   }
   
   @media (max-width: 768px) {

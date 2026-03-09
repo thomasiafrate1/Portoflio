@@ -1,46 +1,23 @@
-import { useState, useEffect } from "react";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // 👈 pour ouvrir/fermer le menu
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-    setMenuOpen(false); // 👈 referme le menu après clic
-  };
-
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div onClick={() => scrollToSection("hero")} className="navbar-brand">Thomas Iafrate</div>
+    <header className="navbar-wrapper">
+      <nav className="navbar">
+        <div className="navbar-logo">T</div>
 
-      {/* Menu burger */}
-      <div className="burger" onClick={() => setMenuOpen(!menuOpen)}>
-        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
-        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
-        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
-      </div>
+        <ul className="navbar-links">
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#experience">Expérience</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#projets">Projets</a></li>
+        </ul>
 
-      {/* Liens */}
-      <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
-        <li><a onClick={() => scrollToSection("profil")}>Profil</a></li>
-        <li><a onClick={() => scrollToSection("experiences")}>Expérience</a></li>
-        <li><a onClick={() => scrollToSection("competences")}>Compétences</a></li>
-        <li><a onClick={() => scrollToSection("projets")}>Projets</a></li>
-        <li><a onClick={() => scrollToSection("contact")}>Me contacter</a></li>
-      </ul>
-    </nav>
+        <a href="#contact" className="navbar-button">
+          Me contacter
+        </a>
+      </nav>
+    </header>
   );
 };
 

@@ -1,114 +1,133 @@
-/* Navbar de base */
+.navbar-wrapper {
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background: rgba(13, 17, 23, 0);
-    backdrop-filter: blur(5px);
-    transition: background 0.4s ease-in-out;
-    z-index: 1000;
-
-  }
-  
-  .navbar.scrolled {
-    background: rgba(13, 17, 23, 0.8);
-  }
-  
-  .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; 
-  }
-
-  .navbar-brand:hover {
-    color: #f56565; 
-    transform: scale(1.1);
-    
-  }
-  
-  .navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 70px;
-    margin-right: 12%;
-    
-  }
-  
-  .navbar-links li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    transition: color 0.3s ease-in-out;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  
-  .navbar-links li a:hover {
-    color: #f56565; 
-  }
-
-  /* Burger icon */
-.burger {
-  display: none;
-  flex-direction: column;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  height: 20px;
-  cursor: pointer;
+  gap: 18px;
+  width: min(720px, calc(100% - 32px));
+  padding: 8px 10px 8px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
 }
 
-.bar {
-  width: 25px;
-  height: 3px;
-  background: white;
-  transition: 0.3s;
+.navbar-logo {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #050505;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
-/* Changement de forme pour effet X */
-.bar.open:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.bar.open:nth-child(2) {
-  opacity: 0;
-}
-.bar.open:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+.navbar-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .burger {
-    display: flex;
-    z-index: 1100;
-    margin-right: 70px;
+.navbar-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #111111;
+  font-size: 0.98rem;
+  font-weight: 600;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.navbar-links a:hover {
+  opacity: 0.7;
+}
+
+.navbar-button {
+  flex-shrink: 0;
+  text-decoration: none;
+  background: linear-gradient(135deg, #c51e1e, #8d0f0f);
+  color: white;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 14px 20px;
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(23, 125, 92, 0.28);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    gap: 12px;
+    width: min(760px, calc(100% - 24px));
   }
 
   .navbar-links {
-    position: absolute;
-    top: 79%;
-    right: 0;
-    background: rgba(13, 17, 23, 0.95);
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    padding: 30px 0;
+    gap: 18px;
+  }
+
+  .navbar-links a {
+    font-size: 0.92rem;
+  }
+
+  .navbar-button {
+    padding: 12px 16px;
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .navbar-links {
     display: none;
   }
 
-  .navbar-links.active {
-    display: flex;
+  .navbar-logo {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
   }
 
-  .navbar-links li a {
-    font-size: 1.5rem;
+  .navbar-button {
+    padding: 12px 16px;
+    font-size: 0.92rem;
   }
 }
-
-  

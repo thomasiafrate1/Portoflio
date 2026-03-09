@@ -13,16 +13,23 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Profil />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Contact/>
-      <Footer />
-    </>
+      <div className="stars-background">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+      </div>
 
+      <div className="app-content">
+        <Navbar />
+        <Hero />
+        <Profil />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   )
 }
 

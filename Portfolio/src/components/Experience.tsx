@@ -1,73 +1,83 @@
 import "../styles/Experience.css";
-import { FaReact, FaHtml5, FaCss3Alt, FaWordpress, FaElementor } from "react-icons/fa";
-import { SiMysql, SiTypescript } from "react-icons/si";
+import { FaAndroid, FaReact, FaHtml5, FaCss3Alt, FaWordpress } from "react-icons/fa";
+import { SiMysql, SiElementor, SiExpo, SiVercel } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
+
+const experiences = [
+    {
+    badge: "2025",
+    period: "Novembre 2025 - Janvier 2026",
+    title: "Développeur Mobile PWA",
+    company: "SARL SAGYR, Cavaillon",
+    description:
+        "Lors de cette expérience, j'ai participé au développement d'une application de diagnostic de peau pensée pour guider les clientes à travers un arbre à choix multiples. L'objectif était d'identifier leur type de peau, puis de leur proposer un soin ainsi que des produits adaptés. Ce projet m'a amené à travailler sur la sauvegarde des données, à prendre en compte les contraintes liées au RGPD, et à m'adapter à un domaine que je ne connaissais pas du tout au départ : celui de la peau, du soin et du conseil client. J'ai dû comprendre précisément les besoins métier, échanger avec l'équipe pour transformer une logique métier en parcours utilisateur clair, et proposer une solution technique cohérente. Cette expérience m'a permis de renforcer ma capacité d'adaptation, de collaborer efficacement en équipe, et de développer une approche plus centrée utilisateur et métier.",
+    techs: [
+        <FaReact className="tech-icon" key="react" />,
+        <SiExpo className="tech-icon" key="expo" />,
+        <FaAndroid className="tech-icon" key="android" />,
+    ],
+    },
+    {
+    badge: "2024",
+    period: "Décembre 2024",
+    title: "Développeur Front-end",
+    company: "SARL SAGYR, Cavaillon",
+    description:
+        "J'ai développé une application de tirage au sort utilisée dans le cadre d'une opération de Noël organisée par l'entreprise. Pendant tout le mois de décembre, les clients pouvaient être inscrits dans l'application, puis un gagnant était tiré au sort chaque jour pour remporter un cadeau. Mon rôle a été de concevoir une interface simple et efficace permettant d'enregistrer les participants, puis de lancer un tirage aléatoire fiable en fin de journée. Ce projet m'a demandé de bien comprendre un besoin client très concret, de m'adapter à une logique événementielle et commerciale, et de proposer une solution rapide, claire et utilisable facilement au quotidien. J'ai également travaillé en lien avec l'équipe pour ajuster le fonctionnement de l'application aux attentes réelles du terrain. Cette expérience m'a appris à traduire un besoin métier simple en outil fonctionnel, tout en restant attentif à l'ergonomie, à la fiabilité et à l'usage final.",
+    techs: [
+        <FaHtml5 className="tech-icon" key="html" />,
+        <FaCss3Alt className="tech-icon" key="css" />,
+        <IoLogoJavascript className="tech-icon" key="js" />,
+        <SiVercel className="tech-icon" key="vercel" />,
+        <SiMysql className="tech-icon" key="mysql" />,
+
+    ],
+    },
+  {
+    badge: "2023",
+    period: "Avril 2023 - Septembre 2023",
+    title: "Développeur Front-end",
+    company: "CPTS Pays d'Arles, Saint-Rémy-de-Provence",
+    description:
+      "Stage de 6 mois durant lequel j'étais le seul développeur en charge du site web. Mes missions comprenaient la création de nouvelles pages, l'intégration de contenus, la maintenance du site, la correction de dysfonctionnements, la mise à jour des articles et l'amélioration du visuel et de l'ergonomie. Cette expérience m'a permis de gagner en autonomie, de prendre des décisions techniques adaptées aux besoins du projet, et de développer ma capacité à résoudre des problèmes de manière concrète dans une structure où polyvalence et réactivité étaient essentielles.",
+    techs: [
+      <FaWordpress className="tech-icon" key="wordpress" />,
+      <SiElementor className="tech-icon" key="elementor" />,
+      <FaHtml5 className="tech-icon" key="html" />,
+      <FaCss3Alt className="tech-icon" key="css" />,
+    ],
+  },
+];
 
 const Experience = () => {
   return (
-    <div id="experiences" className="container-experience-container">
-        <div className="experience-container">
-            <h2 className="experience-title">EXPERIENCE</h2>
-                <div className="experience-timeline">
-                    <div className="experience-item">
-                        <div className="experience-year">Août 2024 - Novembre 2024</div>
-                        <div className="trait-timeline"></div>
-                        <div className="point-timeline"></div>
-                        <div className="experience-content">
-                            <h3 className="experience-position">Développeur Mobile</h3>
-                            <h4 className="experience-company">SARL SAGYR, Cavaillon</h4>
-                            <p>
-                            J'ai réalisé un stage de 4 mois où j'ai eu l'opportunité de développer deux applications : <br />
-                            <br />
-                            - Une application de gestion des stocks permettant d'optimiser le suivi et la disponibilité des produits, conçue en React. <br />
-                            - Une application de tirage au sort sous forme d'arbre à choix, conçue en PWA (Progressive Web App)<br />
-                            <br />
-                            Ce stage m'a permis d'approfondir mes compétences en React et plus largement en développement d'applications. 
-                            J'ai également découvert l'importance de suivre un cahier des charges, de structurer un projet selon les besoins métiers, et de mieux comprendre les enjeux d'un environnement professionnel. 
-                            Cette expérience m'a aidé à développer une approche plus rigoureuse et efficace dans mon travail.
-                            </p>
-                            <div className="experience-techs">
-                                <FaReact className="tech-icon" />
-                                <SiTypescript className="tech-icon" />
-                                <IoLogoJavascript className="tech-icon" />
-                                <SiMysql className="tech-icon" />
-                                <FaHtml5 className="tech-icon" />
-                                <FaCss3Alt className="tech-icon" />
-                            </div>
-                    </div>
-                    </div>
+    <section id="experience" className="timeline-cover">
+      <div className="timeline-title">
+        <h2>EXPÉRIENCE</h2>
+        <p>
+          Mes principales expériences en développement, réalisées en entreprise
+          durant ma formation.
+        </p>
+      </div>
 
-                    <div className="experience-item">
-                    <div className="experience-year">Avril 2023 - Septembre 2023</div>
-                    <div className="trait-timeline2"></div>
-                    <div className="point-timeline2"></div>
-                    <div className="experience-content">
-                        <h3 className="experience-position">Développeur Front-end</h3>
-                        <h4 className="experience-company">CPTS Pays d'Arles, Saint-Rémy-de-Provence</h4>
-                        <p>
-                        Lors de mon stage de 6 mois au sein de la CPTS Pays d'Arles, j'étais le seul développeur en charge de la gestion du site web. Mes missions étaient variées : <br />
-                        <br />
-                        - Création de nouvelles pages et intégration de contenus. <br />
-                        - Maintenance du site et correction des éventuels dysfonctionnements. <br />
-                        - Mise à jour des articles et du contenu afin de garantir une information toujours actuelle. <br />
-                        - Amélioration du visuel et de l'ergonomie pour une meilleure expérience utilisateur. <br />
-                        <br />
-                        Ce stage m'a permis de gagner en autonomie, de prendre des décisions techniques en fonction des besoins et contraintes du projet, 
-                        et de mieux appréhender le rôle d'un développeur dans une structure où il doit être polyvalent et réactif. 
-                        Travailler en solo sur le projet m'a également aidé à développer ma capacité à résoudre des problèmes et à prendre des initiatives techniques adaptées aux attentes de l'entreprise.
-                        </p>
-                        <div className="experience-techs">
-                            <FaWordpress className="tech-icon" />
-                            <FaElementor className="tech-icon" />
-                            <FaHtml5 className="tech-icon" />
-                            <FaCss3Alt className="tech-icon" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+      <div className="timeline">
+        <ul>
+          {experiences.map((experience, index) => (
+            <li key={index}>
+              <div className="timeline-content">
+                <div className="timeline-badge">{experience.badge}</div>
+                <div className="timeline-period">{experience.period}</div>
+                <h3>{experience.title}</h3>
+                <h4>{experience.company}</h4>
+                <p>{experience.description}</p>
+
+                <div className="timeline-techs">{experience.techs}</div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 };
 

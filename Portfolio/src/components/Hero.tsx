@@ -41,17 +41,17 @@ const Hero = () => {
             <span className={`fade-text ${showText ? "visible" : "hidden"}`}>
               {isWebDev ? (
                 <>
-                  Développement <span>Web</span>
+                  Développement <span>Fullstack</span>
                 </>
               ) : (
                  <>
-                 Bachelor <span>3</span>
+                 Master <span>1</span>
                  </>
               )}
             </span>
           </h1>
           <div className="hero-buttons">
-            <button className="hero-button primary" onClick={() => scrollToSection("contact")}>Me contacter ?</button>
+            <button className="hero-button primary" onClick={() => scrollToSection("contact")}>Me contacter</button>
             <button className="hero-button secondary" onClick={() => scrollToSection("profil")}>Mon profil</button>
           </div>
         </div>

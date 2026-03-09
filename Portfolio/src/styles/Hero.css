@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0D1117;
+    background-color: transparent;
     color: white;
     width: 100vw;
     z-index: 0;
@@ -94,7 +94,7 @@
   
   .hero-button.secondary:hover {
     background-color: white;
-    border-color: #0D1117;
+    border-color: transparent;
     color: black;
   }
   
@@ -142,7 +142,7 @@
     left: -423px;
     width: 1300px;
     height: 150px; 
-    background: #0D1117;
+    background: transparent;
     z-index: 2;
   }
   
@@ -246,3 +246,4 @@
     height: auto;
   }
 }
+

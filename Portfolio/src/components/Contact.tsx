@@ -38,7 +38,7 @@ const Contact = () => {
           <input type="text" name="objet" placeholder="Objet *" required onChange={handleChange} />
           <textarea name="message" placeholder="Message *" required onChange={handleChange}></textarea>
           <div className="form-footer">
-            <button type="submit" className="submit-btn">ENVOYER</button>
+            <button type="submit" className="submit-btn">Envoyer</button>
           </div>
         </form>
         <div className="contact-info">
