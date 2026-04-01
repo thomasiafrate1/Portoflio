@@ -26,6 +26,10 @@ body {
   color: rgba(255, 255, 255, 0.87);
 }
 
+[id] {
+  scroll-margin-top: 110px;
+}
+
 a {
   text-decoration: none;
 }
